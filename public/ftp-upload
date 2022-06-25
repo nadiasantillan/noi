@@ -1,0 +1,12 @@
+ftpserver=$1
+ftpuser=$2
+ftppassword=$3
+
+cd public-html
+ftp -pinv $ftpserver <<EOF
+user $ftpuser $ftppassword
+cd public_html
+mput *
+bye
+EOF
+cd ..
